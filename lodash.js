@@ -7039,6 +7039,36 @@
     }
 
     /**
+     * Pushes elements from `values` to `Array`
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} array The array to push the values to.
+     * @param {Array} values The values to push.
+     * @returns {Array} Returns `array`.
+     * @example
+     *
+     * var array = [ 1,2,3 ];
+     * var values = [ 4,5,6 ]
+     *
+     * _.pushAll(array, values);
+     * console.log(array);
+     * // => [ 1,2,3,4,5,6 ]
+     */
+
+    function pushAll(array,values) {
+        var index = -1,
+            length = values.length,
+            offset = array.length;
+
+        while (++index < length) {
+          array[offset + index] = values[index];
+        }
+        return array;
+    }
+
+    /**
      * Removes elements from `array` corresponding to `indexes` and returns an
      * array of removed elements.
      *
